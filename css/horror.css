@@ -1,0 +1,397 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* =========================
+   FOG EFFECT
+========================= */
+
+.fog{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    background:
+    radial-gradient(circle,
+    rgba(255,0,0,.03),
+    transparent 70%);
+    animation:fogMove 12s infinite alternate;
+    z-index:1;
+}
+
+@keyframes fogMove{
+
+    0%{
+        transform:translateX(-50px);
+    }
+
+    100%{
+        transform:translateX(50px);
+    }
+
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:240px;
+    height:100vh;
+    background:#0d0d0d;
+    border-right:2px solid #8b0000;
+    padding:30px 20px;
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.7rem;
+    font-weight:bold;
+    color:red;
+    text-align:center;
+    margin-bottom:40px;
+    text-shadow:0 0 15px red;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    margin:15px 0;
+}
+
+.sidebar ul li a{
+    display:block;
+    text-decoration:none;
+    color:white;
+    padding:14px;
+    border-radius:10px;
+    transition:.4s;
+}
+
+.sidebar ul li a:hover{
+    background:red;
+    transform:translateX(10px);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content{
+    margin-left:240px;
+    position:relative;
+    z-index:10;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+    height:80vh;
+    background:
+    linear-gradient(
+    rgba(0,0,0,.5),
+    rgba(0,0,0,.8)
+    ),
+    url("images/horror-banner.jpg");
+
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-overlay{
+    max-width:800px;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    color:red;
+    text-shadow:
+    0 0 10px red,
+    0 0 25px red;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.3rem;
+    color:#ddd;
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+    padding:60px 30px 20px;
+    text-align:center;
+}
+
+.section-title h2{
+    color:red;
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#ccc;
+}
+
+/* =========================
+   MOVIES
+========================= */
+
+.movies{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+    padding:40px;
+}
+
+.movie-card{
+    background:#111;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.5s;
+    cursor:pointer;
+    border:1px solid #222;
+}
+
+.movie-card:hover{
+
+    transform:
+    translateY(-12px)
+    scale(1.03);
+
+    box-shadow:
+    0 0 30px rgba(255,0,0,.7);
+}
+
+.movie-card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.movie-card:hover img{
+    transform:scale(1.08);
+}
+
+.movie-card h3{
+    text-align:center;
+    padding:15px;
+    color:white;
+}
+
+/* =========================
+   TRAILER
+========================= */
+
+.trailer-section{
+    padding:70px 40px;
+}
+
+.trailer-section h2{
+    text-align:center;
+    color:red;
+    font-size:2.5rem;
+    margin-bottom:30px;
+}
+
+.video-container{
+    max-width:1000px;
+    margin:auto;
+}
+
+.video-container iframe{
+    width:100%;
+    height:550px;
+    border:none;
+    border-radius:20px;
+    box-shadow:
+    0 0 40px rgba(255,0,0,.6);
+}
+
+/* =========================
+   FACTS SECTION
+========================= */
+
+.horror-facts{
+    padding:80px 40px;
+}
+
+.horror-facts h2{
+    text-align:center;
+    color:red;
+    font-size:2.5rem;
+    margin-bottom:40px;
+}
+
+.fact-box{
+    background:#111;
+    padding:30px;
+    margin-bottom:25px;
+    border-left:5px solid red;
+    transition:.4s;
+}
+
+.fact-box:hover{
+    transform:translateX(10px);
+    box-shadow:
+    0 0 25px rgba(255,0,0,.6);
+}
+
+.fact-box h3{
+    color:red;
+    margin-bottom:10px;
+}
+
+.fact-box p{
+    color:#ccc;
+    line-height:1.7;
+}
+
+/* =========================
+   QUOTE SECTION
+========================= */
+
+.quote-section{
+    padding:80px 30px;
+    text-align:center;
+}
+
+.quote-section blockquote{
+    font-size:2rem;
+    color:#bbb;
+    font-style:italic;
+    max-width:800px;
+    margin:auto;
+    line-height:1.6;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:black;
+}
+
+::-webkit-scrollbar-thumb{
+    background:red;
+    border-radius:20px;
+}
+
+
+
+.video-container video{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 0 40px rgba(255,0,0,.6);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .sidebar{
+
+        width:100%;
+        height:auto;
+        position:relative;
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+
+        border-right:none;
+        border-bottom:2px solid red;
+    }
+
+    .sidebar ul{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+    }
+
+    .sidebar ul li{
+        margin:0;
+    }
+
+    .sidebar ul li a{
+        padding:10px 15px;
+    }
+
+    .main-content{
+        margin-left:0;
+    }
+
+    .hero{
+        height:60vh;
+    }
+
+    .hero h1{
+        font-size:2.4rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .movies{
+        padding:20px;
+    }
+
+    .movie-card img{
+        height:280px;
+    }
+
+    .video-container iframe{
+        height:250px;
+    }
+
+    .quote-section blockquote{
+        font-size:1.3rem;
+    }
+}

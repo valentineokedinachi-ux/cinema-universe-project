@@ -1,0 +1,243 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#0b0b0b;
+color:white;
+overflow-x:hidden;
+}
+
+/* FOG (subtle crime spotlight vibe) */
+.fog{
+position:fixed;
+width:100%;
+height:100%;
+background:radial-gradient(circle,rgba(212,175,55,0.05),transparent 70%);
+animation:move 10s infinite alternate;
+pointer-events:none;
+}
+
+@keyframes move{
+0%{transform:translateX(-40px);}
+100%{transform:translateX(40px);}
+}
+
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:240px;
+height:100vh;
+background:#111;
+border-right:2px solid #d4af37;
+padding:25px;
+}
+
+.logo{
+color:#d4af37;
+font-size:1.6rem;
+text-align:center;
+margin-bottom:40px;
+text-shadow:0 0 10px #d4af37;
+}
+
+.sidebar ul{
+list-style:none;
+}
+
+.sidebar ul li{
+margin:15px 0;
+}
+
+.sidebar ul li a{
+color:white;
+text-decoration:none;
+padding:12px;
+display:block;
+border-radius:10px;
+transition:.3s;
+}
+
+.sidebar ul li a:hover{
+background:#d4af37;
+color:black;
+transform:translateX(10px);
+}
+
+/* MAIN */
+.main-content{
+margin-left:240px;
+}
+
+/* HERO */
+.hero{
+height:80vh;
+background:
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),
+url("images/crime-banner.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:4rem;
+color:#d4af37;
+text-shadow:0 0 15px #d4af37;
+}
+
+.hero p{
+color:#ddd;
+margin-top:15px;
+}
+
+/* STATS */
+.stats{
+display:flex;
+justify-content:space-around;
+padding:40px;
+background:#111;
+}
+
+.stat-box{
+text-align:center;
+border:1px solid #d4af37;
+padding:20px;
+border-radius:12px;
+width:30%;
+transition:.3s;
+}
+
+.stat-box:hover{
+transform:translateY(-10px);
+box-shadow:0 0 20px #d4af37;
+}
+
+.stat-box h2{
+color:#d4af37;
+}
+
+/* MOVIES */
+.movies{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+padding:40px;
+}
+
+.movie-card{
+background:#151515;
+border-radius:12px;
+overflow:hidden;
+transition:.4s;
+border:1px solid #222;
+}
+
+.movie-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px #d4af37;
+}
+
+.movie-card img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+.movie-card h3{
+padding:12px;
+text-align:center;
+}
+
+/* TRAILER */
+.trailer{
+padding:60px 40px;
+text-align:center;
+}
+
+.trailer h2{
+color:#d4af37;
+margin-bottom:20px;
+}
+
+.video-box video{
+width:100%;
+height:450px;
+max-width:900px;
+border-radius:15px;
+box-shadow:0 0 30px #d4af37;
+}
+
+/* CASE FILES */
+.cases{
+padding:60px 40px;
+}
+
+.cases h2{
+color:#d4af37;
+text-align:center;
+margin-bottom:30px;
+}
+
+.case{
+background:#111;
+padding:20px;
+margin-bottom:20px;
+border-left:4px solid #d4af37;
+transition:.3s;
+}
+
+.case:hover{
+transform:translateX(10px);
+}
+
+/* QUOTE */
+.quote{
+padding:60px;
+text-align:center;
+font-style:italic;
+color:#ccc;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.sidebar{
+width:100%;
+height:auto;
+position:relative;
+border-right:none;
+border-bottom:2px solid #d4af37;
+}
+
+.mobile-1{
+display:flex;
+gap: 7px;
+}
+
+.main-content{
+margin-left:0;
+}
+
+.stats{
+flex-direction:column;
+gap:20px;
+}
+
+.stat-box{
+width:100%;
+}
+
+.hero h1{
+font-size:2.5rem;
+}
+
+}
