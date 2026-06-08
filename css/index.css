@@ -136,7 +136,7 @@ header{
 
     position: relative;
 
-    background: url('/images/Cine-Verse\ hero\ image.jpeg') no-repeat center/cover;
+    background: url('images/Cine-Verse\ hero\ image.jpeg') no-repeat center/cover;
 }
 
 /* DARK OVERLAY FOR CINEMATIC FEEL */
